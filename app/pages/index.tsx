@@ -9,6 +9,10 @@ import logout from "app/auth/mutations/logout"
  * You can delete everything in here and start from scratch if you like.
  */
 
+let date3 = new Date()
+
+const date2 = date3.toString()
+
 const UserInfo = () => {
   const currentUser = useCurrentUser()
   const [logoutMutation] = useMutation(logout)
@@ -39,6 +43,7 @@ const UserInfo = () => {
             <strong>Sign Up</strong>
           </a>
         </Link>
+
         <Link href={Routes.LoginPage()}>
           <a className="button small">
             <strong>Login</strong>
@@ -59,6 +64,7 @@ const Home: BlitzPage = () => {
         <p>
           <strong>Congrats!</strong> Your app is ready, including user sign-up and log-in.
         </p>
+        <p>{date2}</p>
         <div className="buttons" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
           <Suspense fallback="Loading...">
             <UserInfo />
